@@ -1,9 +1,9 @@
 import './Construction.css';
 
-function App() {
+function Construction() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="Construction">
+      <header className="Construction-header">
         <p>
           Under construction...
         </p>
@@ -12,4 +12,4 @@ function App() {
   );
 }
 
-export default App;
+export default Construction;

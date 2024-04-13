@@ -1,20 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from 'react-router-dom';
 import './index.css';
-import Construction from './pages/Construction';
+import Construction from './Construction';
+import Router from './Router';
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <div>Hello world!</div>,
-  },
-]);
-
-const renderRealPage = false;
+const showConstructionPage = false;
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -22,9 +12,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     {
-      renderRealPage
-        ? <RouterProvider router={router} />
-        : <Construction />
+      showConstructionPage
+        ? <Construction />
+        : <Router />
     }
   </React.StrictMode>
 );

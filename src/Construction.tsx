@@ -1,6 +1,6 @@
 import './Construction.css';
 
-function Construction() {
+const Construction = () => {
   return (
     <div className="Construction">
       <header className="Construction-header">
@@ -10,6 +10,6 @@ function Construction() {
       </header>
     </div>
   );
-}
+};
 
 export default Construction;

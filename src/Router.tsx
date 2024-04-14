@@ -2,27 +2,32 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
+import Posts from './pages/Posts';
+import Projects from './pages/Projects';
+import NotFound from './pages/NotFound';
 
 const tabRouter = createBrowserRouter([
   {
     path: '/',
-    element: <div>Home</div>,
+    element: <Home />,
   },
   {
     path: '/about',
-    element: <div>About</div>,
+    element: <About />,
   },
   {
     path: '/posts',
-    element: <div>Posts</div>,
+    element: <Posts />,
   },
   {
     path: '/projects',
-    element: <div>Projects</div>,
+    element: <Projects />,
   },
   {
     path: '/*',
-    element: <div>Not found</div>,
+    element: <NotFound />,
   },
 ]);
 

@@ -3,14 +3,14 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 import {
-  Stack,
+  Grid,
   Box,
   Button,
 } from '@mui/material';
 import Home from './pages/Home';
-import About from './pages/About';
-import Posts from './pages/Posts';
+import Blog from './pages/Blog';
 import Projects from './pages/Projects';
+import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 
 const tabRouter = createBrowserRouter([
@@ -19,16 +19,16 @@ const tabRouter = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: '/about',
-    element: <About />,
-  },
-  {
-    path: '/posts',
-    element: <Posts />,
+    path: '/blog',
+    element: <Blog />,
   },
   {
     path: '/projects',
     element: <Projects />,
+  },
+  {
+    path: '/contact',
+    element: <Contact />,
   },
   {
     path: '/*',
@@ -38,52 +38,65 @@ const tabRouter = createBrowserRouter([
 
 const Router = () => {
   return (
-    <Stack
+    <Grid
+      container
       direction='column'
-      spacing={1}
       justifyContent='center'
-      alignItems='center'
-      sx={{ height: '100vh', width: '100vw'}}
     >
-      <Stack
-        border={1}
+      <Grid
+        container
         direction='row'
-        spacing={1}
-        alignItems='center'
-        sx={{ height: '20vh'}}
+        justifyContent='center'
       >
-        <Button
-          variant='outlined'
-          onClick={() => { tabRouter.navigate('/') }}
+        <Grid
+          item
+          justifyContent='center'
         >
-          Home
-        </Button>
-        <Button
-          variant='outlined'
-          onClick={() => { tabRouter.navigate('/about') }}
+          <Button
+            variant='outlined'
+            onClick={() => { tabRouter.navigate('/') }}
+          >
+            Dev Patel
+          </Button>
+        </Grid>
+        <Grid
+          item
+          justifyContent='center'
         >
-          About
-        </Button>
-        <Button
-          variant='outlined'
-          onClick={() => { tabRouter.navigate('/posts') }}
-        >
-          Posts
-        </Button>
-        <Button
-          variant='outlined'
-          onClick={() => { tabRouter.navigate('/projects') }}
-        >
-          Projects
-        </Button>
-      </Stack>
-      <Box
-        border={1}
+          <Button
+            variant='outlined'
+            onClick={() => { tabRouter.navigate('/') }}
+          >
+            Home
+          </Button>
+          <Button
+            variant='outlined'
+            onClick={() => { tabRouter.navigate('/blog') }}
+          >
+            Blog
+          </Button>
+          <Button
+            variant='outlined'
+            onClick={() => { tabRouter.navigate('/projects') }}
+          >
+            Projects
+          </Button>
+          <Button
+            variant='outlined'
+            onClick={() => { tabRouter.navigate('/contact') }}
+          >
+            Contact
+          </Button>
+        </Grid>
+      </Grid>
+      <Grid
+        container
+        direction='row'
+        justifyContent='center'
       >
         <RouterProvider router={tabRouter} />
-      </Box>
-      
-    </Stack>
+      </Grid>
+    </Grid>
   );
 };
 

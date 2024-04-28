@@ -2,11 +2,6 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from 'react-router-dom';
-import {
-  Grid,
-  Box,
-  Button,
-} from '@mui/material';
 import Home from './pages/Home';
 import Blog from './pages/Blog';
 import Projects from './pages/Projects';
@@ -38,65 +33,34 @@ const tabRouter = createBrowserRouter([
 
 const Router = () => {
   return (
-    <Grid
-      container
-      direction='column'
-      justifyContent='center'
-    >
-      <Grid
-        container
-        direction='row'
-        justifyContent='center'
+    <>
+      <button
+        onClick={() => { tabRouter.navigate('/') }}
       >
-        <Grid
-          item
-          justifyContent='center'
-        >
-          <Button
-            variant='outlined'
-            onClick={() => { tabRouter.navigate('/') }}
-          >
-            Dev Patel
-          </Button>
-        </Grid>
-        <Grid
-          item
-          justifyContent='center'
-        >
-          <Button
-            variant='outlined'
-            onClick={() => { tabRouter.navigate('/') }}
-          >
-            Home
-          </Button>
-          <Button
-            variant='outlined'
-            onClick={() => { tabRouter.navigate('/blog') }}
-          >
-            Blog
-          </Button>
-          <Button
-            variant='outlined'
-            onClick={() => { tabRouter.navigate('/projects') }}
-          >
-            Projects
-          </Button>
-          <Button
-            variant='outlined'
-            onClick={() => { tabRouter.navigate('/contact') }}
-          >
-            Contact
-          </Button>
-        </Grid>
-      </Grid>
-      <Grid
-        container
-        direction='row'
-        justifyContent='center'
+        Dev Patel
+      </button>
+      <button
+        onClick={() => { tabRouter.navigate('/') }}
       >
-        <RouterProvider router={tabRouter} />
-      </Grid>
-    </Grid>
+        Home
+      </button>
+      <button
+        onClick={() => { tabRouter.navigate('/blog') }}
+      >
+        Blog
+      </button>
+      <button
+        onClick={() => { tabRouter.navigate('/projects') }}
+      >
+        Projects
+      </button>
+      <button
+        onClick={() => { tabRouter.navigate('/contact') }}
+      >
+        Contact
+      </button>
+      <RouterProvider router={tabRouter} />
+    </>
   );
 };
 
